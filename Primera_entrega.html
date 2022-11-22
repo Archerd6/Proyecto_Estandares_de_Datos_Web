@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Antibiotic Resistance Proyect</title>
+  <meta charset="UTF-8">
+</head>
+
+<style>
+  .button {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+
+  .button2 {
+    width: 20%;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #0462aa;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+
+  .button:hover {
+    background-color: #3e8e41
+  }
+
+  .button2:hover {
+    background-color: #3e6f8e
+  }
+
+  .button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .button2:active {
+    background-color: #3e6f8e;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .inline-div {
+    display: inline-block;
+    width: 49%;
+    height:350px;
+    border:1px solid black;
+  }
+
+  .inline-div2 {
+    text-align: right;
+  }
+
+  .inline-div3 {
+    display: inline-block;
+    width: 80%;
+    height:400px;
+    /* border:1px solid black; */
+  }
+
+  .inline-div4 {
+    display: inline-block;
+    width: 19%;
+    height:400px;
+    /* border:1px solid black; */
+  }
+
+</style>
+
+
+<body>
+  <h1> &nbsp;&nbsp;&nbsp; Antibiotic Resistance</h1> <br>
+
+  <div class="inline-div3" id="xml_input" name="xml_input" >
+    <div >
+      <div class="pagedtable pagedtable-not-empty" style="opacity: 1;">
+        <table style="visibility: hidden; position: absolute; white-space: nowrap; height: auto; width: 50%;">
+          <tr>
+            <td style="border-bottom-color: rgba(0, 0, 0, 0.12);">ABCDEFGHIJ0123456789</td>
+          </tr>
+        </table>
+        <table cellspacing="0" class="table table-condensed">
+          <thead>
+            <tr>
+              <th align="right"
+                style="text-align: right; max-width: 38px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                <div class="pagedtable-header-name">X</div>
+                <div class="pagedtable-header-type">&lt;int&gt;</div>
+              </th>
+              <th align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                <div class="pagedtable-header-name">Distribution</div>
+                <div class="pagedtable-header-type">&lt;fctr&gt;</div>
+              </th>
+              <th align="left"
+                style="text-align: left; max-width: 42px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                <div class="pagedtable-header-name">Unit</div>
+                <div class="pagedtable-header-type">&lt;fctr&gt;</div>
+              </th>
+              <th align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                <div class="pagedtable-header-name">Time</div>
+                <div class="pagedtable-header-type">&lt;int&gt;</div>
+              </th>
+              <th align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                <div class="pagedtable-header-name">RegionCode</div>
+                <div class="pagedtable-header-type">&lt;fctr&gt;</div>
+              </th>
+              <th align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                <div class="pagedtable-header-name">RegionName</div>
+                <div class="pagedtable-header-type">&lt;fctr&gt;</div>
+              </th>
+              <th align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                <div class="pagedtable-header-name">Category</div>
+                <div class="pagedtable-header-type">&lt;fctr&gt;</div>
+              </th>
+              <th align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                <div class="pagedtable-header-name">Value</div>
+                <div class="pagedtable-header-type">&lt;dbl&gt;</div>
+              </th>
+              <th
+                style="cursor: pointer; vertical-align: middle; min-width: 5px; width: 5px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                <div
+                  style="border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-left: 5px solid;">
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="odd">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">0
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">BG
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Bulgaria</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">0-4
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                0.000000</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="even" style="background-color: rgba(0, 0, 0, 0.02);">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">1
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">BG
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Bulgaria</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">5-18
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                100.000000</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="odd">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">2
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">BG
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Bulgaria</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                19-64</td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                62.857143</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="even" style="background-color: rgba(0, 0, 0, 0.02);">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">3
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">BG
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Bulgaria</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">65+
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                56.521739</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="odd">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">4
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">CY
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Cyprus</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">0-4
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                33.333333</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="even" style="background-color: rgba(0, 0, 0, 0.02);">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">5
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">CY
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Cyprus</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">5-18
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                0.000000</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="odd">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">6
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">CY
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Cyprus</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                19-64</td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                57.142857</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="even" style="background-color: rgba(0, 0, 0, 0.02);">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">7
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">CY
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Cyprus</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">65+
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                62.500000</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="odd">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">8
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">DE
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Germany</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">0-4
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                0.000000</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="even" style="background-color: rgba(0, 0, 0, 0.02);">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">9
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">DE
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Germany</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">5-18
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                0.000000</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="odd">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">10
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">DE
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Germany</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                19-64</td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                9.090909</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="even" style="background-color: rgba(0, 0, 0, 0.02);">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">11
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">DE
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Germany</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">65+
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                5.479452</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="odd">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">12
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">DK
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Denmark</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">0-4
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                0.000000</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="even" style="background-color: rgba(0, 0, 0, 0.02);">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">13
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">DK
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Denmark</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">5-18
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                16.666667</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="odd">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">14
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">DK
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Denmark</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                19-64</td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                15.384615</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+            <tr class="even" style="background-color: rgba(0, 0, 0, 0.02);">
+              <td align="right"
+                style="text-align: right; max-width: 27px; min-width: 27px; border-bottom-color: rgba(0, 0, 0, 0.12);">15
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 369px; min-width: 369px; border-bottom-color: rgba(0, 0, 0, 0.12);">R
+                - resistant isolates proportion, by age</td>
+              <td align="left"
+                style="text-align: left; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">%
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 36px; min-width: 36px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                2012</td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">DK
+              </td>
+              <td align="left"
+                style="text-align: left; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                Denmark</td>
+              <td align="left"
+                style="text-align: left; max-width: 72px; min-width: 72px; border-bottom-color: rgba(0, 0, 0, 0.12);">65+
+              </td>
+              <td align="right"
+                style="text-align: right; max-width: 90px; min-width: 90px; border-bottom-color: rgba(0, 0, 0, 0.12);">
+                7.142857</td>
+              <td style="border-bottom-color: rgba(0, 0, 0, 0.12);"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pagedtable-footer" style="border-top-color: rgba(0, 0, 0, 0.12);">
+          <div class="pagedtable-info" title="16 rows | 1-8 of 10 columns">16 rows | 1-8 of 10 columns</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="inline-div4" id="xml_input" name="xml_input">
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tools</h1>
+    <button id="boton1" class="button" onclick="window.location.href='Look.html';">🔎 Look Up</button>
+    <br />
+    <br />
+    <br />
+
+    <button id="boton2" class="button" onclick="window.location.href='Info.html';">Show info</button>
+
+    <br />
+    <br />
+    <br />
+
+    <button id="boton2" class="button" onclick="window.location.href='Download.html';">Download</button>
+    <br />
+    <br />
+    <br />
+
+    <button id="boton2" class="button" onclick="window.location.href='Prueba_tu_propio_texto.html';">More</button>
+
+  </div>
+
+  <button id="boton2" class="button2" onclick="window.location.href='view.html';">View</button>
+
+</body>
+
+</html>
