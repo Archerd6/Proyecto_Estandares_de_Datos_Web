@@ -4,6 +4,21 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        body {
+            background-image: url("https://raw.githubusercontent.com/Archerd6/Aplicacion-robots-asistenciales-Web/main/Documentos%20del%20proyecto/Gradiente.png");
+            background-repeat: repeat-x;
+        }
+
+        h1 {
+            line-height: 10px;
+        }
+
+        p {
+            line-height: 5px;
+        }
+
+
+
         .container {
             position: left;
             width: 100%;
@@ -203,23 +218,43 @@
             margin: auto;
             border: 3px solid #73AD21;
         }
+
+        a {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            background-image: url("https://raw.githubusercontent.com/Archerd6/Proyecto_Estandares_de_Datos_Web/main/Imagenes/Flecha_atras.png");
+            background-size: contain;
+            background-position: center;
+            border: none;
+        }
+
+        a:hover {
+            background-color: #3e6f8e
+        }
     </style>
 </head>
 
 <body>
 
-<center>
-    <h1>Mapa de Europa</h1>
-    <p>Selecciona un pais para ver sobre sus datos</p>
-</center>
-    
+    <center>
+        <h1>Mapa de Europa</h1> <a style="float:right" href="index.html"></a>
+        <p>Selecciona un pais para ver sobre sus datos</p>
+    </center>
+
 
     <div class="container" class="ex1">
         <img src="mapa.svg">
 
         <button class="btnFra" onclick="window.location.href='Tabla_Francia.html';">&#x1F1EB;&#x1F1F7;</button>
 
-        &nbsp; &nbsp; &nbsp; <button class="btnEsp" onclick="window.location.href='Tabla_Espana.html';">&#x1F1EA;&#x1F1F8;</button>
+        &nbsp; &nbsp; &nbsp; <button class="btnEsp"
+            onclick="window.location.href='Tabla_Espana.html';">&#x1F1EA;&#x1F1F8;</button>
 
         <button class="btnAle" onclick="window.location.href='Tabla_Alemania.html';">&#x1F1E9;&#x1F1EA;</button>
 
@@ -237,7 +272,7 @@
     </div>
 
 
-    
+
 
 </body>
 

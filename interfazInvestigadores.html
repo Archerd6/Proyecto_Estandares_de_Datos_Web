@@ -8,48 +8,47 @@
 </head>
 
 <style>
-
-    body{
+    body {
         font-family: Georgia;
         background-color: #a1d8fb;
     }
 
-       
+
     .button {
-        width: 260px;
-        height: 260px;
+        width: 255px;
+        height: 255px;
         font-size: 24px;
         text-align: center;
         cursor: pointer;
         outline: none;
         color: #fff;
         background-color: #61c0ff;
-        background-image:url('https://raw.githubusercontent.com/Archerd6/Proyecto_Estandares_de_Datos_Web/main/Imagenes/Bacteria.png');
+        background-image: url('https://raw.githubusercontent.com/Archerd6/Proyecto_Estandares_de_Datos_Web/main/Imagenes/Bacteria.png');
         background-size: contain;
-        background-position:center;
+        background-position: center;
         border: none;
         border-radius: 15px;
         /* box-shadow: 0 9px #999; */
     }
 
     .button2 {
-        width: 260px;
-        height: 260px;
+        width: 255px;
+        height: 255px;
         font-size: 24px;
         text-align: center;
         cursor: pointer;
         outline: none;
         color: #fff;
         background-color: #61c0ff;
-        background-image:url('https://raw.githubusercontent.com/Archerd6/Proyecto_Estandares_de_Datos_Web/main/Imagenes/Grupo.png');
+        background-image: url('https://raw.githubusercontent.com/Archerd6/Proyecto_Estandares_de_Datos_Web/main/Imagenes/Grupo.png');
         background-size: contain;
-        background-position:center;
+        background-position: center;
         border: none;
         border-radius: 15px;
         /* box-shadow: 0 9px #999; */
     }
 
-    a{
+    a {
         width: 40px;
         height: 40px;
         position: absolute;
@@ -59,9 +58,9 @@
         text-align: center;
         cursor: pointer;
         outline: none;
-        background-image:url("https://cdn-icons-png.flaticon.com/512/93/93634.png");
+        background-image: url("https://raw.githubusercontent.com/Archerd6/Proyecto_Estandares_de_Datos_Web/main/Imagenes/Flecha_atras.png");
         background-size: contain;
-        background-position:center;
+        background-position: center;
         border: none;
     }
 
@@ -99,7 +98,7 @@
         float: right;
         width: 70%;
         height: 500px;
-        
+
     }
 
     .inline-div-izquierda {
@@ -111,13 +110,16 @@
         display: none;
     }
 
+    h1 {
+        line-height: 5px;
+    }
 </style>
 
 
 <script>
 
     function mostrarBacterias() {
-          
+
         document.getElementById("tB").style.display = "block";
         document.getElementById("tE").style.display = "none";
     };
@@ -131,7 +133,7 @@
 
 
 <body>
-    <a style="float:right" href="interfazInvestigadores.html"></a>
+    <a style="float:right" href="index.html"></a>
     <center>
         <h1> Bacterias con resistencia a antibióticos </h1>
     </center>
@@ -140,27 +142,20 @@
         <center>
             <button class="button" onclick="mostrarBacterias()"></button>
             <br>
+            <br>
             <button class="button2" onclick="mostrarEstudios()"></button>
         </center>
-        
+
     </div>
 
     <div class="inline-div-derecha">
-    
-        <object class="objTabla"
-            id="tB"
-            type="text/html"
-            data="tabla_bacteria.html"
-            style="width: 100%; height:100%;">
+
+        <object class="objTabla" id="tB" type="text/html" data="tabla_bacteria.html" style="width: 100%; height:100%;">
         </object>
-        
-        <object class="objTabla"
-            id="tE"
-            type="text/html"
-            data="tabla_estudios.html"
-            style="width: 100%; height:100%;">
+
+        <object class="objTabla" id="tE" type="text/html" data="tabla_estudios.html" style="width: 100%; height:100%;">
         </object>
-        
+
     </div>
 
 </body>
