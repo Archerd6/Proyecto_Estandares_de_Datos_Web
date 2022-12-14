@@ -35,6 +35,46 @@
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
+
+  .buttonDownloadTransform {
+    width: 16%;
+    height: 25px;
+    position: absolute;
+    right: 25%;
+    top: 90%;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #0462aa;
+    border: none;
+    border-radius: 15px;
+  }
+
+  .buttonDownloadTransform:hover {
+    background-color: #3e6f8e
+  }
+
+  .buttonDownloadCSV {
+    width: 16%;
+    height: 25px;
+    position: absolute;
+    right: 60%;
+    top: 90%;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #0462aa;
+    border: none;
+    border-radius: 15px;
+  }
+
+  .buttonDownloadCSV:hover {
+    background-color: #3e6f8e
+  }
 </style>
 
 
@@ -44,8 +84,6 @@
 
     <h1> &nbsp;&nbsp;&nbsp; Antibiotic Resistance</h1> <br>
 
-    <br>
-    <br>
     <br>
     <br>
     <br>
@@ -71,6 +109,22 @@
 
     <button id="boton1" class="button" onclick="window.location.href='interfazInvestigadores.html';">🥽 Vista de
       investigador</button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <form method="get" action="Transformaciones_xslt/Transformaciones_xslt.zip">
+      <button class="buttonDownloadTransform" type="submit">Descargar las transformaciones 📇</button>
+    </form>
+
+    <form method="get" action="Datos/Datos_xml_csv.zip">
+      <button class="buttonDownloadCSV" type="submit">Descargar datos originales 📄</button>
+    </form>
+
+    
+
 
   </center>
 </body>
